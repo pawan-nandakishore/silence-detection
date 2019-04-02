@@ -10,6 +10,9 @@ In the plot below, the blue line is a an audio signal. The red regions are regio
      style="float: left; margin-right: 10px;" />
 
 
+## Points of caution 
+- This analysis may not work on even slightly noisy videos. Manual threshold over so many videos may not make sense
+- 
 ## To do 
 - Generate mel coefficients (MFCC) and do silence vs spoken speech analysis
 - Filtering out noise
