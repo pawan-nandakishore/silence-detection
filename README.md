@@ -18,4 +18,4 @@ In the plot below, the blue line is a an audio signal. The red regions are regio
 - Filtering out noise
 - Try spectral gating analysis for reducing noise
 - Perhaps a bandpass filter for noise reduction 
-- 
+  
