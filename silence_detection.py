@@ -19,13 +19,20 @@ def get_silent_regions(wav_file, min_silence_length= 500, silence_threshold= -35
     """
     return pdb.silence.detect_silence(wav_file,min_silence_len=min_silence_length,silence_thresh=silence_threshold)
 
-def filter_wave(pdb_wav, freq, type= None): 
-    if type_filter == "low": 
-        return pdb_wav.low_pass_filter(freq)
-    elif type_filter== "high":
-        return pdb_wav.high_pass_filter(freq)
-    elif type_filter == None :
-        return pdb_wav 
+def filtered_silent_regions(wav_file, filter_low =1000, filter_high= 1000, min_silence_length= 500, silence_threshold= -35 ): 
+    """
+        Silent regions after wave has been filtered. We apply a low pass and high pass filtering  
+    """
+
+# low pass filtering and high pass filtering 
+    wave_filtered_low = wav_file.low_pass_filter(filter_low)
+    wave_filtered_high = wave_filtered_low.high_pass_filter(filter_high)
+    
+    silent_regions = pdb.silence.detect_silence(wave_filtered_high,min_silence_len=min_silence_length,silence_thresh=silence_threshold )
+    
+    return silent_regions
+
+
     
 
 def plot_silent_regions(wav_file, silent_regions, save_fig ="no"): 
