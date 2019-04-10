@@ -18,4 +18,5 @@ In the plot below, the blue line is a an audio signal. The red regions are regio
 - Filtering out noise
 - Try spectral gating analysis for reducing noise
 - Perhaps a bandpass filter for noise reduction 
-  
+- This is rather a slow operation in pydub. Have to find a way to speed it up and put it in a cookiecutter project
+
